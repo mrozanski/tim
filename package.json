@@ -1,0 +1,34 @@
+{
+  "name": "tim",
+  "version": "1.0.0",
+  "description": "tim — local-first time tracking CLI with Google Sheets sync",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "tim": "./bin/tim.js"
+  },
+  "scripts": {
+    "start": "node ./bin/tim.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrozanski/tim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrozanski/tim/issues"
+  },
+  "homepage": "https://github.com/mrozanski/tim#readme",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.3.2",
+    "better-sqlite3": "^12.8.0",
+    "commander": "^14.0.3",
+    "googleapis": "^171.4.0",
+    "open": "^11.0.0"
+  }
+}
