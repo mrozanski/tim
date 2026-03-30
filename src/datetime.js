@@ -60,6 +60,15 @@ export function formatDuration(ms) {
   return `${totalSec}s`;
 }
 
+/** Wall-clock span as `hh:mm:ss` (non-negative). */
+export function formatDurationHms(ms) {
+  const totalSec = Math.floor(Math.max(0, ms) / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
 /**
  * @param {{ week?: boolean, month?: boolean }} opts
  * @returns {{ rangeStart: Date, rangeEnd: Date, label: string }}

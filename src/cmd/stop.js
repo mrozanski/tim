@@ -1,4 +1,4 @@
-import { formatUtc } from '../datetime.js';
+import { formatDurationHms, formatUtc, parseUtc } from '../datetime.js';
 import { openTim } from '../runtime.js';
 import { trySyncEntry } from '../sync.js';
 
@@ -24,4 +24,9 @@ export async function cmdStop() {
   }
 
   console.log(`Stopped timer on ${name}.`);
+  const start = parseUtc(active.start_time_utc);
+  const end = parseUtc(nowUtc);
+  if (start && end) {
+    console.log(`Tracked ${formatDurationHms(end.getTime() - start.getTime())}.`);
+  }
 }
